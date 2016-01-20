@@ -37,14 +37,18 @@ $(document).ready(function() {
         h = h.toString().split("");
         m = m.toString().split("");
 
-        
+        //Call changeNumber passing the element in the hour array
+        //and passing the div holder number
         changeNumber(parseInt(h[0]), "one");
         changeNumber(parseInt(h[1]), "two");
         
+        //Call changeNumber passing the element in the minute array
+        //and passing the div holder number
         changeNumber(parseInt(m[0]), "three");
         changeNumber(parseInt(m[1]), "four");                
     }
     
+    //changeNumber is called and updates the numbers if needed.
     function changeNumber(input, holderNum) {
         input = parseInt(input);
         switch(input) {
@@ -83,6 +87,11 @@ $(document).ready(function() {
         }
     }
     
+    /*
+        These are all fuctions that deteermine what each number looks like when active.
+        The reset function is called at the beginning of every function to reset the number
+        to eight, so the hidden properties are shown again.
+    */
     
     function zero(holderNum) {
         reset(holderNum);
@@ -163,5 +172,7 @@ $(document).ready(function() {
         $("#content > #holder-" + holderNum + " > .number").find(".bottom-right").show();       
     }
     
+    //Call startTime() to start the function.
+    //It calls itself so there is no need to call it again.
     startTime();
 });
