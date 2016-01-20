@@ -1,5 +1,3 @@
-var i = 0;
-
 $(document).ready(function() { 
     function startTime() {
         //Create a new Date object
