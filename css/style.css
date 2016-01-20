@@ -5,24 +5,24 @@ body {
 #textClock {
     padding: 5em;
 }
-
-
-
-#holder-one {
+#content {
     position: relative;
-    margin-left: 20%;
+}
+#holder-one {
+    position: absolute;
+    left: 6em;
 }
 #holder-two {
-    position: relative;
-    margin-left: 35%;
+    position: absolute;
+    left: 23em;
 }
 #holder-three {
-    position: relative;
-    margin-left: 55%;
+    position: absolute;
+    left: 44em;
 }
 #holder-four {
-    position: relative;
-    margin-left: 70%;
+    position: absolute;
+    left: 61em;
 }
 
 .triangle-up {
@@ -41,7 +41,7 @@ body {
 }
 .rectangle {
     width: 3em;
-    height: 7.5em;
+    height: 7.55em;
     background: red;
 }
 
