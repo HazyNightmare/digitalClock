@@ -1,4 +1,22 @@
-$(document).ready(function() { 
+$(document).ready(function() {
+    
+    $('#light-theme').on('click', function() {
+        $('body').css("background-color", "white");
+        $('body').css("color", "black");
+        $('body').find('.triangle-up').css("border-bottom-color", "black");
+        $('body').find('.rectangle').css("background", "black");
+        $('body').find('.triangle-down').css("border-top-color", "black");
+    });
+    
+    $('#dark-theme').click(function() {
+        $('body').css("background-color", "black");
+        $('body').css("color", "red");
+        $('body').find('.triangle-up').css("border-bottom-color", "red");
+        $('body').find('.rectangle').css("background", "red");
+        $('body').find('.triangle-down').css("border-top-color", "red");
+    });
+    
+    
     function startTime() {
         //Create a new Date object
         var today = new Date();
@@ -157,7 +175,6 @@ $(document).ready(function() {
     function nine(holderNum) {
         reset(holderNum);
         $("#content > #holder-" + holderNum + " > .number").find(".bottom-left").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-border").hide();
     }
     
     function reset(holderNum) {
