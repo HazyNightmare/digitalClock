@@ -5,6 +5,12 @@ body {
 #textClock {
     padding: 5em;
 }
+#holder-button {
+    margin-top: 2.5em;
+}
+
+
+
 #content {
     position: relative;
 }
@@ -24,6 +30,8 @@ body {
     position: absolute;
     left: 61em;
 }
+
+
 
 .triangle-up {
     width: 0;
@@ -46,6 +54,19 @@ body {
 }
 
 
+#colon {
+    position: relative;
+}
+#colon-top {
+    position: absolute;
+    top: 5em;
+    left: 39em;
+}
+#colon-bottom {
+    position: absolute;
+    top: 15em;
+    left: 39em;
+}
 
 .number {
     position: relative;
