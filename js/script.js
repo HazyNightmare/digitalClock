@@ -187,8 +187,7 @@ $(document).ready(function() {
         clockController.reset(holderNum);
         clockController.bottomLeft(holderNum);
     }
-});
-
+    
     //If light-theme button is pressed, change the background 
     //and divs to white and black, respectively.
     $('#light-theme').on('click', function() {
@@ -219,3 +218,4 @@ $(document).ready(function() {
     $('#twenty-four-hour').click(function() {
         clockController.twelveHour = false;
     });
+});
