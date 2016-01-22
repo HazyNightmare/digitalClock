@@ -2,17 +2,17 @@ body {
     background-color: black;
     color: red;
 }
-#textClock {
-    padding: 5em;
-}
 #holder-button {
     margin-top: 2.5em;
 }
 
-
+/*
+// Positioning of the numbers on the page.
+*/
 
 #content {
     position: relative;
+    margin-top: 10em;
 }
 #holder-one {
     position: absolute;
@@ -31,7 +31,9 @@ body {
     left: 61em;
 }
 
-
+/*
+// Clock design
+*/
 
 .triangle-up {
     width: 0;
@@ -53,6 +55,9 @@ body {
     background: red;
 }
 
+/*
+// Clock colon positioning
+*/
 
 #colon {
     position: relative;
@@ -67,6 +72,10 @@ body {
     top: 15em;
     left: 39em;
 }
+
+/*
+// Clock bar positioning
+*/
 
 .number {
     position: relative;

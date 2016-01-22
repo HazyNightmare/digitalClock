@@ -1,52 +1,29 @@
 $(document).ready(function() {
     
-    $('#light-theme').on('click', function() {
-        $('body').css("background-color", "white");
-        $('body').css("color", "black");
-        $('body').find('.triangle-up').css("border-bottom-color", "black");
-        $('body').find('.rectangle').css("background", "black");
-        $('body').find('.triangle-down').css("border-top-color", "black");
-    });
+    var twelveHour = true;
     
-    $('#dark-theme').click(function() {
-        $('body').css("background-color", "black");
-        $('body').css("color", "red");
-        $('body').find('.triangle-up').css("border-bottom-color", "red");
-        $('body').find('.rectangle').css("background", "red");
-        $('body').find('.triangle-down').css("border-top-color", "red");
-    });
-    
-    
-    function startTime() {
+    //startTime is an IIFE. It is run immediately and then it is called by itself
+    (function startTime() {
         //Create a new Date object
         var today = new Date();
         
-        //Get the hours, mins, and seconds off of that object
+        //Get the hours and mins off of that object
         var h = today.getHours();
         var m = today.getMinutes();
         
         //Call check time to add zeros if needed 
         h = checkTime(h);
         m = checkTime(m);
-        
-        //Put the hours, min, and seconds into a readable string
-        var formatedDate = h + ":" + m;
-        
-        //Get the element #text and update the innerHTML to formatedDate
-        $('#textClock').html(formatedDate);
-        
-        //Call startTime() after half a second
-        setTimeout(startTime, 1000);
-        setTimeout(clock(h, m), 1000);
-    }
 
-    function checkTime(input) {
-        if (input < 10) {
-            //Adds a zero to the front of numbers if they're less than 10
-            input = "0" + input;
+        //If twelveHour is true, call the function to change the hour to 12 hours
+        if (twelveHour === true) {
+            h = toTwelveHour(h);
         }
-        return input;
-    }
+        
+        //Call startTime() and clock() after half a second
+        setTimeout(startTime, 500);
+        setTimeout(clock(h, m), 500);
+    })();
     
     function clock(h, m) {
         //Split hours and mins into an array 
@@ -57,7 +34,7 @@ $(document).ready(function() {
         //and passing the div holder number
         changeNumber(parseInt(h[0]), "one");
         changeNumber(parseInt(h[1]), "two");
-        
+
         //Call changeNumber passing the element in the minute array
         //and passing the div holder number
         changeNumber(parseInt(m[0]), "three");
@@ -103,6 +80,57 @@ $(document).ready(function() {
         }
     }
     
+    function checkTime(input) {
+        if (input < 10) {
+            //Adds a zero to the front of numbers if they're less than 10
+            input = "0" + input;
+        }
+        return input;
+    }
+    
+    function toTwelveHour(input) {
+        if (input > 12) {
+            input = input % 12;
+            input = "0" + input;
+        }
+        return input;
+    }
+    
+    
+    
+    //If light-theme button is pressed, change the background 
+    //and divs to white and black, respectively.
+    $('#light-theme').on('click', function() {
+        $('body').css("background-color", "white");
+        $('body').css("color", "black");
+        $('body').find('.triangle-up').css("border-bottom-color", "black");
+        $('body').find('.rectangle').css("background", "black");
+        $('body').find('.triangle-down').css("border-top-color", "black");
+    });
+    
+    //If dark-theme button is pressed, change the background 
+    //and divs to black and red, respectively.
+    $('#dark-theme').click(function() {
+        $('body').css("background-color", "black");
+        $('body').css("color", "red");
+        $('body').find('.triangle-up').css("border-bottom-color", "red");
+        $('body').find('.rectangle').css("background", "red");
+        $('body').find('.triangle-down').css("border-top-color", "red");
+    });
+    
+    
+    //If twelve-hour button is pressed, change twelveHour to true
+    $('#twelve-hour').on('click', function() {
+        twelveHour = true;
+    });
+    
+    //If twenty-four-hour button is pressed, change twelveHour to false
+    $('#twenty-four-hour').click(function() {
+        twelveHour = false;
+    });
+    
+    
+    
     /*
         These are all fuctions that deteermine what each number looks like when active.
         The reset function is called at the beginning of every function to reset the number
@@ -111,6 +139,7 @@ $(document).ready(function() {
     
     function zero(holderNum) {
         reset(holderNum);
+        //var middle-border = $("#content > #holder-" + holderNum + " > .number").find(".middle-border").hide();
         $("#content > #holder-" + holderNum + " > .number").find(".middle-border").hide();
     }
     
@@ -186,8 +215,4 @@ $(document).ready(function() {
         $("#content > #holder-" + holderNum + " > .number").find(".bottom-border").show();
         $("#content > #holder-" + holderNum + " > .number").find(".bottom-right").show();       
     }
-    
-    //Call startTime() to start the function.
-    //It calls itself so there is no need to call it again.
-    startTime();
 });
