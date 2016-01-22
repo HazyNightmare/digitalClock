@@ -53,7 +53,7 @@ $(document).ready(function() {
     
     function toTwelveHour(input) {
         if (input > 12) {
-            input = input % 12;
+            input = input - 12;
             input = "0" + input;
         }
         return input;
