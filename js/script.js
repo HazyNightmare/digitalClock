@@ -1,6 +1,24 @@
 $(document).ready(function() {
-    
-    var twelveHour = true;
+    //Object to hold all of the different numbers and how they display on the clock
+    var clockController = {
+      twelveHour: true,
+      topLeft: function(num) {$("#content > #holder-" + num + " > .number").find(".top-left").hide();},
+      topBorder: function(num) {$("#content > #holder-" + num + " > .number").find(".top-border").hide();},
+      topRight: function(num) {$("#content > #holder-" + num + " > .number").find(".top-right").hide();},
+      middleBorder: function(num) {$("#content > #holder-" + num + " > .number").find(".middle-border").hide();},
+      bottomLeft: function(num) {$("#content > #holder-" + num + " > .number").find(".bottom-left").hide();},
+      bottomBorder: function(num) {$("#content > #holder-" + num + " > .number").find(".bottom-border").hide();},
+      bottomRight: function(num) {$("#content > #holder-" + num + " > .number").find(".bottom-right").hide();  },
+      reset: function(num) {
+        $("#content > #holder-" + num + " > .number").find(".top-left").show();
+        $("#content > #holder-" + num + " > .number").find(".top-border").show();
+        $("#content > #holder-" + num + " > .number").find(".top-right").show();
+        $("#content > #holder-" + num + " > .number").find(".middle-border").show();
+        $("#content > #holder-" + num + " > .number").find(".bottom-left").show();
+        $("#content > #holder-" + num + " > .number").find(".bottom-border").show();
+        $("#content > #holder-" + num + " > .number").find(".bottom-right").show();       
+      }
+    };
     
     //startTime is an IIFE. It is run immediately and then it is called by itself
     (function startTime() {
@@ -16,7 +34,7 @@ $(document).ready(function() {
         m = checkTime(m);
 
         //If twelveHour is true, call the function to change the hour to 12 hours
-        if (twelveHour === true) {
+        if (clockController.twelveHour === true) {
             h = toTwelveHour(h);
         }
         
@@ -24,6 +42,23 @@ $(document).ready(function() {
         setTimeout(startTime, 500);
         setTimeout(clock(h, m), 500);
     })();
+    
+    function checkTime(input) {
+        if (input < 10) {
+            //Adds a zero to the front of numbers if they're less than 10
+            input = "0" + input;
+        }
+        return input;
+    }
+    
+    function toTwelveHour(input) {
+        if (input > 12) {
+            input = input % 12;
+            input = "0" + input;
+        }
+        return input;
+    }
+    
     
     function clock(h, m) {
         //Split hours and mins into an array 
@@ -80,24 +115,80 @@ $(document).ready(function() {
         }
     }
     
-    function checkTime(input) {
-        if (input < 10) {
-            //Adds a zero to the front of numbers if they're less than 10
-            input = "0" + input;
-        }
-        return input;
+    
+    /*
+        These are all fuctions that determine what each number looks like when active.
+        The reset function is called at the beginning of every function to reset the number
+        to eight, so the hidden properties are shown again.
+    */
+    
+    function zero(holderNum) {
+        clockController.reset(holderNum);
+        clockController.middleBorder(holderNum);
     }
     
-    function toTwelveHour(input) {
-        if (input > 12) {
-            input = input % 12;
-            input = "0" + input;
-        }
-        return input;
+    function one(holderNum) {
+        clockController.reset(holderNum);
+        clockController.topLeft(holderNum);
+        clockController.topBorder(holderNum);
+        clockController.middleBorder(holderNum);
+        clockController.bottomLeft(holderNum);
+        clockController.bottomBorder(holderNum);
     }
     
+    function two(holderNum) {
+        clockController.reset(holderNum);
+        
+        clockController.topLeft(holderNum);
+        clockController.bottomRight(holderNum);
+    }
     
+    function three(holderNum) {
+        clockController.reset(holderNum);
+        
+        clockController.topLeft(holderNum);
+        clockController.bottomLeft(holderNum);
+    }
     
+    function four(holderNum) {
+        clockController.reset(holderNum);
+        
+        clockController.topBorder(holderNum);
+        clockController.bottomLeft(holderNum);
+        clockController.bottomBorder(holderNum);
+    }
+    
+    function five(holderNum) {
+        clockController.reset(holderNum);
+        
+        clockController.topRight(holderNum);
+        clockController.bottomLeft(holderNum);
+    }
+    
+    function six(holderNum) {
+        clockController.reset(holderNum);
+        
+        clockController.topRight(holderNum);
+    }
+    
+    function seven(holderNum) {
+        clockController.reset(holderNum);
+        clockController.topLeft(holderNum);
+        clockController.middleBorder(holderNum);
+        clockController.bottomLeft(holderNum);
+        clockController.bottomBorder(holderNum);
+    }
+    
+    function eight(holderNum) {
+        clockController.reset(holderNum);
+    }
+    
+    function nine(holderNum) {
+        clockController.reset(holderNum);
+        clockController.bottomLeft(holderNum);
+    }
+});
+
     //If light-theme button is pressed, change the background 
     //and divs to white and black, respectively.
     $('#light-theme').on('click', function() {
@@ -121,98 +212,10 @@ $(document).ready(function() {
     
     //If twelve-hour button is pressed, change twelveHour to true
     $('#twelve-hour').on('click', function() {
-        twelveHour = true;
+        clockController.twelveHour = true;
     });
     
     //If twenty-four-hour button is pressed, change twelveHour to false
     $('#twenty-four-hour').click(function() {
-        twelveHour = false;
+        clockController.twelveHour = false;
     });
-    
-    
-    
-    /*
-        These are all fuctions that deteermine what each number looks like when active.
-        The reset function is called at the beginning of every function to reset the number
-        to eight, so the hidden properties are shown again.
-    */
-    
-    function zero(holderNum) {
-        reset(holderNum);
-        //var middle-border = $("#content > #holder-" + holderNum + " > .number").find(".middle-border").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".middle-border").hide();
-    }
-    
-    function one(holderNum) {
-        reset(holderNum);
-        $("#content > #holder-" + holderNum + " > .number").find(".top-left").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".top-border").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".middle-border").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-left").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-border").hide();
-    }
-    
-    function two(holderNum) {
-        reset(holderNum);
-        $("#content > #holder-" + holderNum + " > .number").find(".top-left").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-right").hide();
-    }
-    
-    function three(holderNum) {
-        reset(holderNum);
-        $("#content > #holder-" + holderNum + " > .number").find(".top-left").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-left").hide();
-    }
-    
-    function four(holderNum) {
-        reset(holderNum);
-        $("#content > #holder-" + holderNum + " > .number").find(".top-border").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-left").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-border").hide();
-    }
-    
-    function five(holderNum) {
-        reset(holderNum);
-        $("#content > #holder-" + holderNum + " > .number").find(".top-right").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-left").hide();
-    }
-    
-    function six(holderNum) {
-        reset(holderNum);
-        $("#content > #holder-" + holderNum + " > .number").find(".top-right").hide();
-    }
-    
-    function seven(holderNum) {
-        reset(holderNum);
-        $("#content > #holder-" + holderNum + " > .number").find(".top-left").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".middle-border").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-left").hide();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-border").hide();
-    }
-    
-    function eight(holderNum) {
-        reset(holderNum);
-        $("#content > #holder-" + holderNum + " > .number").find(".top-left").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".top-border").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".top-right").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".middle-border").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-left").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-border").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-right").show();    
-    }
-    
-    function nine(holderNum) {
-        reset(holderNum);
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-left").hide();
-    }
-    
-    function reset(holderNum) {
-        $("#content > #holder-" + holderNum + " > .number").find(".top-left").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".top-border").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".top-right").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".middle-border").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-left").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-border").show();
-        $("#content > #holder-" + holderNum + " > .number").find(".bottom-right").show();       
-    }
-});
