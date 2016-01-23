@@ -1,263 +1,264 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Digital Clock</title>
-    
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="container text-center">
 
 
-    <div id="holder-button">
-        <div class="btn-group">
-            <button id="light-theme" class="btn btn-default" href="#">Light</button>
-            <button id="dark-theme" class="btn btn-default" href="#">Dark</button>   
-        </div>
-        
-        <div class="btn-group">
-            <button id="twelve-hour" class="btn btn-default" href="#">12 Hour</button>
-            <button id="twenty-four-hour" class="btn btn-default" href="#">24 Hour</button>   
-        </div>
-    </div>
-    
+	<div id="holder-button">
+		<div class="btn-group">
+			<button id="light-theme" class="btn btn-default" type="button" href="#">Light</button>
+			<button id="dark-theme" class="btn btn-default" type="button" href="#">Dark</button>
+		</div>
+
+		<div class="btn-group">
+			<button id="twelve-hour" class="btn btn-default" type="button" href="#">12 Hour</button>
+			<button id="twenty-four-hour" class="btn btn-default" type="button" href="#">24 Hour</button>
+		</div>
+	</div>
 
 
+	<div id="content">
+		<div id="holder-one">
+			<div class="number">
+				<div class="top">
+					<div class="top-left">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
 
-    <div id="content">
-        <div id="holder-one">
-            <div class="number">
-                <div class="top">
-                    <div class="top-left">      
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>              
-                    </div>
-                    
-                    <div class="top-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                    
-                    <div class="top-right">               
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-                
-                
-                <div class="middle">
-                    <div class="middle-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-                
-                
-                <div class="bottom">
-                    <div class="bottom-left">      
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>              
-                    </div>
-                    
-                    <div class="bottom-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                    
-                    <div class="bottom-right">               
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div id="holder-two">
-            <div class="number">
-                <div class="top">
-                    <div class="top-left">      
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>              
-                    </div>
-                    
-                    <div class="top-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                    
-                    <div class="top-right">               
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-                
-                
-                <div class="middle">
-                    <div class="middle-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-                
-                
-                <div class="bottom">
-                    <div class="bottom-left">      
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>              
-                    </div>
-                    
-                    <div class="bottom-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                    
-                    <div class="bottom-right">               
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="colon">
-            <div id="colon-top">
-                <div class="triangle-up"></div>
-                <div class="triangle-down"></div>
-            </div>
-            <div id="colon-bottom">
-                <div class="triangle-up"></div>
-                <div class="triangle-down"></div>
-            </div>
-        </div>
-        
-        <div id="holder-three">
-            <div class="number">
-                <div class="top">
-                    <div class="top-left">      
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>              
-                    </div>
-                    
-                    <div class="top-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                    
-                    <div class="top-right">               
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-                
-                
-                <div class="middle">
-                    <div class="middle-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-                
-                
-                <div class="bottom">
-                    <div class="bottom-left">      
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>              
-                    </div>
-                    
-                    <div class="bottom-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                    
-                    <div class="bottom-right">               
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div id="holder-four">
-            <div class="number">
-                <div class="top">
-                    <div class="top-left">      
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>              
-                    </div>
-                    
-                    <div class="top-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                    
-                    <div class="top-right">               
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-                
-                
-                <div class="middle">
-                    <div class="middle-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-                
-                
-                <div class="bottom">
-                    <div class="bottom-left">      
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>              
-                    </div>
-                    
-                    <div class="bottom-border">                
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                    
-                    <div class="bottom-right">               
-                        <div class="triangle-up"></div>
-                        <div class="rectangle"></div>
-                        <div class="triangle-down"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>    
+					<div class="top-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="top-right">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+
+
+				<div class="middle">
+					<div class="middle-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+
+
+				<div class="bottom">
+					<div class="bottom-left">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="bottom-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="bottom-right">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="holder-two">
+			<div class="number">
+				<div class="top">
+					<div class="top-left">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="top-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="top-right">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+
+
+				<div class="middle">
+					<div class="middle-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+
+
+				<div class="bottom">
+					<div class="bottom-left">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="bottom-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="bottom-right">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="colon">
+			<div id="colon-top">
+				<div class="triangle-up"></div>
+				<div class="triangle-down"></div>
+			</div>
+			<div id="colon-bottom">
+				<div class="triangle-up"></div>
+				<div class="triangle-down"></div>
+			</div>
+		</div>
+
+		<div id="holder-three">
+			<div class="number">
+				<div class="top">
+					<div class="top-left">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="top-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="top-right">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+
+
+				<div class="middle">
+					<div class="middle-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+
+
+				<div class="bottom">
+					<div class="bottom-left">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="bottom-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="bottom-right">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="holder-four">
+			<div class="number">
+				<div class="top">
+					<div class="top-left">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="top-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="top-right">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+
+
+				<div class="middle">
+					<div class="middle-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+
+
+				<div class="bottom">
+					<div class="bottom-left">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="bottom-border">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+
+					<div class="bottom-right">
+						<div class="triangle-up"></div>
+						<div class="rectangle"></div>
+						<div class="triangle-down"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
+
 </html>
