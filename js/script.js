@@ -12,7 +12,7 @@ $('#light-theme').on('click', function() {
 
 //If dark-theme button is pressed, change the background
 //and divs to black and red, respectively.
-$('#dark-theme').on('click', function() {
+$('#dark-theme').click(function() {
 	$('body').css("background-color", "black");
 	$('body').css("color", "red");
 	$('body').find('.triangle-up').css("border-bottom-color", "red");
@@ -27,7 +27,7 @@ $('#twelve-hour').on('click', function() {
 });
 
 //If twenty-four-hour button is pressed, change twelveHour to false
-$('#twenty-four-hour').on('click', function() {
+$('#twenty-four-hour').click(function() {
 	clockController.twelveHour = false;
 });
 

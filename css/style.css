@@ -2,133 +2,268 @@ body {
 	background-color: black;
 	color: red;
 }
-#holder-button {
-	margin-top: 2.5em;
+
+@media all and (min-width: 1200px) {
+	#holder-button {
+		margin-top: 2.5em;
+	}
+
+	/*
+	// Positioning of the numbers on the page.
+	*/
+
+	#content {
+		position: relative;
+		margin-top: 10em;
+	}
+	#holder-one {
+		position: absolute;
+		left: 10%;
+	}
+	#holder-two {
+		position: absolute;
+		left: 30%;
+	}
+	#holder-three {
+		position: absolute;
+		left: 56%;
+	}
+	#holder-four {
+		position: absolute;
+		left: 76%;
+	}
+
+	/*
+	// Clock design
+	*/
+
+	.triangle-up {
+		width: 0;
+		height: 0;
+		border-left: 1.5em solid transparent;
+		border-right: 1.5em solid transparent;
+		border-bottom: 1.5em solid red;
+	}
+	.triangle-down {
+		width: 0;
+		height: 0;
+		border-left: 1.5em solid transparent;
+		border-right: 1.5em solid transparent;
+		border-top: 1.5em solid red;
+	}
+	.rectangle {
+		width: 3em;
+		height: 7.55em;
+		background: red;
+	}
+
+
+	/*
+	// Clock colon positioning
+	*/
+
+	#colon {
+		position: relative;
+	}
+	#colon-top {
+		position: absolute;
+		top: 5em;
+		left: 50%;
+	}
+	#colon-bottom {
+		position: absolute;
+		top: 15em;
+		left: 50%;
+	}
+
+	/*
+	// Clock bar positioning
+	*/
+
+	.number {
+		position: relative;
+	}
+	.top-left {
+		position: absolute;
+	}
+	.top-border {
+		position: absolute;
+		top: -5.5em;
+		left: 5.5em;
+		-ms-transform: rotate(90deg);
+		/* IE 9 */
+		-moz-transform: rotate(90deg);
+		/* Firefox */
+		-webkit-transform: rotate(90deg);
+		/* Chrome, Safari, Opera */
+		transform: rotate(90deg);
+	}
+	.top-right {
+		position: absolute;
+		left: 11em;
+	}
+	.middle-border {
+		position: absolute;
+		top: 5.5em;
+		left: 5.5em;
+		-ms-transform: rotate(90deg);
+		/* IE 9 */
+		-moz-transform: rotate(90deg);
+		/* Firefox */
+		-webkit-transform: rotate(90deg);
+		/* Chrome, Safari, Opera */
+		transform: rotate(90deg);
+	}
+	.bottom-left {
+		position: absolute;
+		top: 11em;
+	}
+	.bottom-border {
+		position: absolute;
+		top: 16.5em;
+		left: 5.5em;
+		-ms-transform: rotate(90deg);
+		/* IE 9 */
+		-moz-transform: rotate(90deg);
+		/* Firefox */
+		-webkit-transform: rotate(90deg);
+		/* Chrome, Safari, Opera */
+		transform: rotate(90deg);
+	}
+	.bottom-right {
+		position: absolute;
+		top: 11em;
+		left: 11em;
+	}
 }
 
-/*
-// Positioning of the numbers on the page.
-*/
 
-#content {
-	position: relative;
-	margin-top: 10em;
-}
-#holder-one {
-	position: absolute;
-	left: 6em;
-}
-#holder-two {
-	position: absolute;
-	left: 23em;
-}
-#holder-three {
-	position: absolute;
-	left: 44em;
-}
-#holder-four {
-	position: absolute;
-	left: 61em;
-}
+@media all and (max-width: 1200px) {
 
-/*
-// Clock design
-*/
+	#holder-button {
+		margin-top: 2.5em;
+	}
 
-.triangle-up {
-	width: 0;
-	height: 0;
-	border-left: 1.5em solid transparent;
-	border-right: 1.5em solid transparent;
-	border-bottom: 1.5em solid red;
-}
-.triangle-down {
-	width: 0;
-	height: 0;
-	border-left: 1.5em solid transparent;
-	border-right: 1.5em solid transparent;
-	border-top: 1.5em solid red;
-}
-.rectangle {
-	width: 3em;
-	height: 7.55em;
-	background: red;
-}
+	/*
+	// Positioning of the numbers on the page.
+	*/
 
-/*
-// Clock colon positioning
-*/
+	#content {
+		position: relative;
+		margin-top: 5em;
+	}
+	#holder-one {
+		position: absolute;
+		left: 2%;
+	}
+	#holder-two {
+		position: absolute;
+		left: 27%;
+	}
+	#holder-three {
+		position: absolute;
+		left: 53%;
+	}
+	#holder-four {
+		position: absolute;
+		left: 78%;
+	}
 
-#colon {
-	position: relative;
-}
-#colon-top {
-	position: absolute;
-	top: 5em;
-	left: 39em;
-}
-#colon-bottom {
-	position: absolute;
-	top: 15em;
-	left: 39em;
-}
+	.triangle-up {
+		width: 0;
+		height: 0;
+		border-left: 1em solid transparent;
+		border-right: 1em solid transparent;
+		border-bottom: 1em solid red;
+	}
+	.triangle-down {
+		width: 0;
+		height: 0;
+		border-left: 1em solid transparent;
+		border-right: 1em solid transparent;
+		border-top: 1em solid red;
+	}
+	.rectangle {
+		width: 2em;
+		height: 7.55em;
+		background: red;
+	}
 
-/*
-// Clock bar positioning
-*/
+	/*
+	// Clock colon positioning
+	*/
 
-.number {
-	position: relative;
-}
-.top-left {
-	position: absolute;
-}
-.top-border {
-	position: absolute;
-	top: -5.5em;
-	left: 5.5em;
-	-ms-transform: rotate(90deg);
-	/* IE 9 */
-	-moz-transform: rotate(90deg);
-	/* Firefox */
-	-webkit-transform: rotate(90deg);
-	/* Chrome, Safari, Opera */
-	transform: rotate(90deg);
-}
-.top-right {
-	position: absolute;
-	left: 11em;
-}
-.middle-border {
-	position: absolute;
-	top: 5.5em;
-	left: 5.5em;
-	-ms-transform: rotate(90deg);
-	/* IE 9 */
-	-moz-transform: rotate(90deg);
-	/* Firefox */
-	-webkit-transform: rotate(90deg);
-	/* Chrome, Safari, Opera */
-	transform: rotate(90deg);
-}
-.bottom-left {
-	position: absolute;
-	top: 11em;
-}
-.bottom-border {
-	position: absolute;
-	top: 16.5em;
-	left: 5.5em;
-	-ms-transform: rotate(90deg);
-	/* IE 9 */
-	-moz-transform: rotate(90deg);
-	/* Firefox */
-	-webkit-transform: rotate(90deg);
-	/* Chrome, Safari, Opera */
-	transform: rotate(90deg);
-}
-.bottom-right {
-	position: absolute;
-	top: 11em;
-	left: 11em;
+	#colon {
+		position: relative;
+	}
+	#colon-top {
+		position: absolute;
+		top: 5em;
+		left: 50%;
+	}
+	#colon-bottom {
+		position: absolute;
+		top: 15em;
+		left: 50%;
+	}
+
+	/*
+	// Clock bar positioning
+	*/
+
+	.number {
+		position: relative;
+	}
+	.top-left {
+		position: absolute;
+	}
+	.top-border {
+		position: absolute;
+		top: -5em;
+		left: 5em;
+		-ms-transform: rotate(90deg);
+		/* IE 9 */
+		-moz-transform: rotate(90deg);
+		/* Firefox */
+		-webkit-transform: rotate(90deg);
+		/* Chrome, Safari, Opera */
+		transform: rotate(90deg);
+	}
+	.top-right {
+		position: absolute;
+		left: 10em;
+	}
+	.middle-border {
+		position: absolute;
+		top: 5em;
+		left: 5em;
+		-ms-transform: rotate(90deg);
+		/* IE 9 */
+		-moz-transform: rotate(90deg);
+		/* Firefox */
+		-webkit-transform: rotate(90deg);
+		/* Chrome, Safari, Opera */
+		transform: rotate(90deg);
+	}
+	.bottom-left {
+		position: absolute;
+		top: 10em;
+	}
+	.bottom-border {
+		position: absolute;
+		top: 15em;
+		left: 5em;
+		-ms-transform: rotate(90deg);
+		/* IE 9 */
+		-moz-transform: rotate(90deg);
+		/* Firefox */
+		-webkit-transform: rotate(90deg);
+		/* Chrome, Safari, Opera */
+		transform: rotate(90deg);
+	}
+	.bottom-right {
+		position: absolute;
+		top: 10em;
+		left: 10em;
+	}
 }
